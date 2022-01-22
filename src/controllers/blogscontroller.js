@@ -22,31 +22,6 @@ const createBlogs = async function (req, res) {
 }
 
 
-// const getBlogs = async function (req, res) {
-//     try {
-
-//         let info = req.query
-//         let data = await BlogsModel.findOne(info)
-//         if (data) {
-//             if (data.isDeleted == false && data.isPublished == true) {
-//                 res.status(200).send({ Status: "Success", Info: data })
-
-
-//             } else {
-//                 res.status(500).send({ err: "either book isn't published or data is deleted" })
-//             }
-//         } else {
-//             res.status(404).send({ err: "please provide valid Query Params in Postman" })
-//         }
-
-//     }
-//     catch (err) {
-//         console.log(err.message)
-//         res.status(500).send({ msg: "Something went wrong" })
-//     }
-// }
-
-
 const getBlogs = async function (req, res) {
     try {
         let body = req.query;
@@ -129,30 +104,6 @@ const DeleteBlogs = async function (req, res) {
     }
 }
 
-// const DeleteBlogsbyQuery = async function (req, res) {
-//     try {
-   
-//         let decodedUserToken = req.user
-//         info=req.query
-//         let BlogUser = await BlogsModel.findOne({info})
-//         console.log(decodedUserToken.userId)
-//         console.log(BlogUser.authorId)
-//         if (decodedUserToken.userId == BlogUser.authorId) {
-//             let tempdata = await BlogsModel.findOneAndUpdate({ id: BlogUser._id, isDeleted: false }, { isDeleted: true}) //deletedAt: Date() })
-//             if (BlogUser) {
-
-//                 res.status(200).send()
-//             } else {
-//                 res.status(404).send({ err: "data might have been already deleted" })
-//             }
-//         } else {
-//             res.status(404).send({ err: "you are trying to access a different's user account" })
-//         }
-//     }
-//     catch (err) {
-//         res.status(500).send({ status: false, message: err.message })
-//     }
-// }
 
 
 const DeleteBlogsbyQuery = async function (req, res) {
